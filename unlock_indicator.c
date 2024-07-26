@@ -1070,6 +1070,11 @@ void render_lock(uint32_t *resolution, xcb_drawable_t drawable) {
                     break;
             }
 
+            if (unlock_state == STATE_NOTHING_TO_DELETE) {
+                draw_data.status_text.x = te_eval(te_wrong_x_expr);
+                draw_data.status_text.y = te_eval(te_wrong_y_expr);
+            }
+
             draw_data.mod_text.x = te_eval(te_modif_x_expr);
             draw_data.mod_text.y = te_eval(te_modif_y_expr);
 
