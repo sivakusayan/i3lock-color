@@ -919,7 +919,7 @@ void render_lock(uint32_t *resolution, xcb_drawable_t drawable) {
         draw_data.keylayout_text.align = layout_align;
     }
 
-    if (greeter_text) {
+    if (greeter_text && (!draw_data.status_text.show)) {
         draw_data.greeter_text.show = true;
         strncpy(draw_data.greeter_text.str, greeter_text, sizeof(draw_data.greeter_text.str) - 1);
         draw_data.greeter_text.size = greeter_size;
